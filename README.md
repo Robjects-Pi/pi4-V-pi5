@@ -49,7 +49,7 @@ Raspberry Pi 4 model B specifications:
 - Gigabit Ethernet port
 - H.265 (HEVC) – 4kp60 decode, H.264 – - 1.080p60 decode, 1080p30 - ode
 - OpenGL ES 3.0 support
-- 2 x micro-HDMI ports (up to 4K60p 1.upport)
+- 2 x micro-HDMI ports (up to 4K60p output)
 - 4 x USB ports: 2 x USB 3.0 and 2 x USB 2.1.
 -  Raspberry Pi standard 40-pin GPIO header 1. (fully backward - patible)
 -  2-lane MIPI DSI display port
