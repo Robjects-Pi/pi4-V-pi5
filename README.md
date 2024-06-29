@@ -15,12 +15,21 @@ Control variables:
 
 - Both are brand new and have never been utilized
 - both software that's going to be incorporated is the exact (it's gonna be next where it is way better hopeless holistic representation of the performance across many metrics
-The metrics:
-1. Testing both the USB 3.0 speed across external drive and a hard drive multiplex into different USB slots
-2. A test of the data file synchronization across 10x10 GB Consecutive uploads and
-3. synchronization of 300 photos of about average size (3-10 MBS)
-4. 100 videos the same files that is split and various sizes depending on duration
-5. A test of the temperature using the standard raspberry pi fan the respective power supplies (3 A vs 5 A )
+The Benchmarks:
+    - Benchmark #0: test of all metrics with noterminal output to a file
+    - Benchmark #1: add terminal output <!-- TODO: SHOWCASE THIS FIRST WHEN FEATURING VIDEO, then add with only quick preview of benchmark #0 results -->
+    - Benchmark #2: add  externally powered metric grabber and outscanner on both rpis
+    - Benchmark#3 and # 4: Testing both the USB 3.0 speed across external drive and a hard drive multiplex into different USB slots
+        - how: A test of the data file synchronization across 10x10 GB Consecutive uploads and
+    - Benchmark  #5: Basic file Transfer from sd card to USB
+        - how: synchronization of 300 photos of about average size (3-10 MBS)
+        - 100 videos the same files that is split and various sizes depending on duration
+
+
+# Results: 
+Metrics captured and displayed via terminal in all tests :
+    
+ temperature using no the standard raspberry pi fan the respective power supplies (3 A vs 5 A )
 
 
 realistically, both these devices are really fast and the smaller and more ever to be years of relevance
