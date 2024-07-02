@@ -39,7 +39,7 @@ After the test, I'm I plan on doing a comparison of the less technical features 
 
 Analysis I can give you my opinion if it is worth the benefits from you release depending on your intended use case
 
-update
+
 Focus on providing more concrete factual data that can be repeated so that you may reach a more objective decision and give you the data and inspiration to incorporate your groundbreaking ideas and technology on.
 
 
