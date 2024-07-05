@@ -1,4 +1,6 @@
-Pi 4 vs. pi 5 - buy or nah?
+Raspberry Pi - 4 vs. Raspberry Pi - 5
+
+Pi 4 vs. R 5 - a comprehensive comparison
 
 <!-- add image of both (be used for thumbnail photo) -->
     
