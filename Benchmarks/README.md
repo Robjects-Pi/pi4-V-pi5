@@ -26,6 +26,132 @@ Each benchmark markdown is divided into several key sections, each focusing on d
    - Summary of the benchmark findings and their implications for the system's performance.
    - Recommendations for improving system performance based on the benchmark results.
 
+## Benchmark Overview
+
+This document outlines the structure and results of four different benchmarks conducted to evaluate the performance of Raspberry Pi 4 and Raspberry Pi 5 under various conditions. Each benchmark aims to provide a comprehensive understanding of the system's capabilities and identify areas for improvement.
+
+## Structure of Individual Benchmarks
+
+Each benchmark markdown is divided into several key sections, each focusing on different aspects of the system's performance:
+
+1. **Introduction**
+   - Overview of the benchmark goals and objectives.
+   - Description of the system configuration and setup used for the benchmark.
+
+2. **Methodology**
+   - Detailed explanation of the benchmarking process, including the tools and metrics used for evaluation.
+   - Description of the test scenarios and workloads.
+
+3. **Results**
+   - Presentation of the benchmark results, including graphs and tables for easier comparison and analysis.
+   - Analysis of the results, highlighting key findings and performance trends.
+
+4. **Discussion**
+   - Interpretation of the benchmark results, discussing the system's performance in the context of the test scenarios.
+   - Identification of any bottlenecks or limitations observed during the benchmark.
+
+5. **Conclusion and Recommendations**
+   - Summary of the benchmark findings and their implications for the system's performance.
+   - Recommendations for improving system performance based on the benchmark results.
+
+## Quick Instructions for Running Benchmarks
+
+To ensure consistency across all benchmarks, we will use the same scripts for both terminal and file output. Below are the instructions for running each benchmark tool:
+
+### Sysbench
+
+**Installation:**
+
+```bash
+sudo apt-get install sysbench
+```
+
+**Single-Threaded CPU Test:**
+
+```bash
+sysbench --test=cpu --cpu-max-prime=20000 run | tee sysbench_single_thread.txt
+```
+
+**Multi-Threaded CPU Test:**
+
+```bash
+sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run | tee sysbench_multi_thread.txt
+```
+
+### Stress-ng
+
+**Installation:**
+
+```bash
+sudo apt-get install stress-ng
+```
+
+**CPU Stress Test:**
+
+```bash
+stress-ng --cpu 4 --cpu-method matrixprod --timeout 300s | tee stress_ng_cpu.txt
+```
+
+### PassMark PerformanceTest
+
+**Installation:**
+
+Download the Linux version from the PassMark website and follow the installation instructions.
+
+**Usage:**
+
+```bash
+./pt_linux_arm64 -r 3 | tee passmark_performance_test.txt
+```
+
+### Vcgencmd
+
+**Installation:**
+
+```bash
+sudo apt-get install stress
+```
+
+**Benchmarking Script:**
+
+Create a script named `benchmark.sh` with the following content:
+
+```bash
+#!/bin/bash
+
+echo "Benchmark Tool"
+output_file="benchmark.csv"
+echo "Timestamp,CPU Temperature (°C),CPU Clock Speed (MHz),CPU Throttled" > "$output_file"
+
+echo "Idle data for 60 seconds"
+for i in {1..60}; do
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    cpu_temp=$(vcgencmd measure_temp | cut -d= -f2 | cut -d\' -f1)
+    cpu_freq=$(vcgencmd measure_clock arm | cut -d= -f2)
+    cpu_throttled=$(vcgencmd get_throttled | cut -d= -f2)
+    echo "$timestamp,$cpu_temp,$cpu_freq,$cpu_throttled" >> "$output_file"
+    sleep 1
+done
+
+stress --cpu 4 -t 300 &
+echo "Stress data for 300 seconds"
+for i in {1..300}; do
+    timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+    cpu_temp=$(vcgencmd measure_temp | cut -d= -f2 | cut -d\' -f1)
+    cpu_freq=$(vcgencmd measure_clock arm | cut -d= -f2)
+    cpu_throttled=$(vcgencmd get_throttled | cut -d= -f2)
+    echo "$timestamp,$cpu_temp,$cpu_freq,$cpu_throttled" >> "$output_file"
+    sleep 1
+done
+```
+
+**Run the Script:**
+
+```bash
+chmod +x benchmark.sh
+./benchmark.sh | tee vcgencmd_benchmark.txt
+```
+
 ## Benchmark 1: Performance Under Load
 
 ### Introduction
