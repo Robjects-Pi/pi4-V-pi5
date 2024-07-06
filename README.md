@@ -1,92 +1,155 @@
-Raspberry Pi - 4 vs. Raspberry Pi - 5
 
-Pi 4 vs. R 5 - a comprehensive comparison
+# Raspberry Pi Benchmarking Suite
 
-<!-- add image of both (be used for thumbnail photo) -->
-    
+## Introduction
+
+Welcome to the Raspberry Pi Benchmarking Suite! This repository contains tools and instructions for benchmarking the performance of your Raspberry Pi. Whether you are using a Raspberry Pi 4 or the latest Raspberry Pi 5, this guide will help you get started with configuring your device and running comprehensive benchmark tests.
+
+## Table of Contents
+
+- [Raspberry Pi Benchmarking Suite](#raspberry-pi-benchmarking-suite)
+  - [Introduction](#introduction)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Configuring Raspberry Pi Connect](#configuring-raspberry-pi-connect)
+  - [Benchmark Tests](#benchmark-tests)
+    - [CPU Benchmarks](#cpu-benchmarks)
+    - [Memory Benchmarks](#memory-benchmarks)
+    - [Storage Benchmarks](#storage-benchmarks)
+    - [Network Benchmarks](#network-benchmarks)
+    - [GPU Benchmarks](#gpu-benchmarks)
+  - [Benchmark Results](#benchmark-results)
+
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following:
+
+- A Raspberry Pi 4 or Raspberry Pi 5
+- A 64-bit distribution of Raspberry Pi OS Bookworm
+- An active internet connection
+- SSH enabled on your Raspberry Pi
+
+### Configuring Raspberry Pi Connect
+
+Raspberry Pi Connect provides secure access to your Raspberry Pi from anywhere in the world. Follow these steps to configure it:
+
+1. **Update Your System**
+---
+```bash
+   sudo apt update && sudo apt upgrade -y
+```
+---
+
+2. **Install Raspberry Pi Connect**
+---
+```bash
+   sudo apt install rpi-connect
+```
+---
+
+3. **Reboot Your Raspberry Pi**
+---
+```bash
+   sudo reboot
+```
+---
+
+4. **Link Your Raspberry Pi to Your Raspberry Pi ID**
+
+   - **Via the Raspberry Pi Desktop**:
+     - Click on the Connect icon in the system tray and choose "Sign in".
+     - Follow the instructions to generate a verification URL and link your device.
+
+   - **Via the Command Line**:
+---    
+```bash
+     rpi-connect signin
+    ```
+---
+     - Visit the generated URL to complete the linking process.
+
+5. **Verify Connection**
+   - Once linked, the Connect system tray icon will turn blue.
+   - You should receive an email notification indicating that a new device has signed into Connect.
+
+For more detailed instructions, refer to the [Raspberry Pi Connect Documentation](https://www.raspberrypi.com/documentation/services/connect.html)[1].
+
+## Benchmark Tests
+
+Navigate to the `benchmarks` folder for detailed instructions and scripts for running the following benchmarks:
+
+### CPU Benchmarks
+
+- **Sysbench**: Measures CPU performance using prime number calculations.
+---
+```bash
+  sysbench --test=cpu --cpu-max-prime=20000 run
+```
+---
+
+- **Stress-ng**: Stress tests the CPU with various methods.
+---
+```bash
+  stress-ng --cpu 4 --cpu-method matrixprod --timeout 300s
+```
+---
+
+### Memory Benchmarks
+
+- **RAMspeed**: Measures cache and memory performance.
+---
+```bash
+  ramspeed -b 1M -m 1G
+```
+---
+
+### Storage Benchmarks
+
+- **HDParm**: Tests read speed of storage devices.
+---
+```bash
+  sudo hdparm -Tt /dev/mmcblk0
+```
+---
+
+- **Iozone**: Tests file system performance.
+---
+```bash
+  sudo iozone -a -g 512M
+```
+---
+
+### Network Benchmarks
+
+- **Speedtest CLI**: Measures internet speed.
+---
+```bash
+  speedtest-cli
+```
+---
+
+### GPU Benchmarks
+
+- **glmark2**: Tests GPU performance.
+---
+```bash
+  glmark2
+```
+---
+
+## Benchmark Results
+
+Detailed benchmark results for Raspberry Pi 4 and Raspberry Pi 5 can be found in the `results` folder.Here, you will find the results of running the above benchmarks on both Raspberry Pi models and the corresponding performance metrics. 
+
+ These results include comparisons across various benchmarks to highlight the performance improvements and differences between the two models.
+
+For more information, refer to the [Raspberry Pi Benchmark Results](./results/README.md).
+
+[1]: https://www.raspberrypi.com/documentation/services/connect.html
 
 
+This README provides a comprehensive guide to getting started with benchmarking on Raspberry Pi, including configuration steps for Raspberry Pi Connect and detailed benchmark instructions and results.
 
-
-Test comparisons
-
-both rpi 4 and rpi 5 tests
-
-
-Control variables:
-
-- Both are brand new and have never been utilized
-- both software that's going to be incorporated is the exact (it's gonna be next where it is way better hopeless holistic representation of the performance across many metrics
-The Benchmarks:
-    - Benchmark #0: test of all metrics with noterminal output to a file
-    - Benchmark #1: add terminal output <!-- TODO: SHOWCASE THIS FIRST WHEN FEATURING VIDEO, then add with only quick preview of benchmark #0 results -->
-    - Benchmark #2: add  externally powered metric grabber and outscanner on both rpis
-    - Benchmark#3 and # 4: Testing both the USB 3.0 speed across external drive and a hard drive multiplex into different USB slots
-        - how: A test of the data file synchronization across 10x10 GB Consecutive uploads and
-    - Benchmark  #5: Basic file Transfer from sd card to USB
-        - how: synchronization of 300 photos of about average size (3-10 MBS)
-        - 100 videos the same files that is split and various sizes depending on duration
-
-
-# Results: 
-Metrics captured and displayed via terminal in all tests :
-    
- temperature using no the standard raspberry pi fan the respective power supplies (3 A vs 5 A )
-
-
-realistically, both these devices are really fast and the smaller and more ever to be years of relevance
-
-
-After the test, I'm I plan on doing a comparison of the less technical features such as the aesthetics device, the noise of their fan, book of installation to a wall, comparison of costs.
-
-Analysis I can give you my opinion if it is worth the benefits from you release depending on your intended use case
-
-
-Focus on providing more concrete factual data that can be repeated so that you may reach a more objective decision and give you the data and inspiration to incorporate your groundbreaking ideas and technology on.
-
-
-For my videos, I plan to keep a more data science approach and will spend more of my time examining how to provide science based reports with the new and constantly changing machine, learning and AI solutions with the real ones no possibilities only through continuous and never ending learnings from failure
-
-# Raspberry Pi 4 vs. Raspberry Pi 5: A Comprehensive Comparison
-
-The Raspberry Pi 4 and Raspberry Pi 5 are two of the most popular single-board computers on the market, known for their versatility and affordability. In this article, we will compare the Raspberry Pi 4 and Raspberry Pi 5 across various performance metrics to help you decide which one is right for your needs.
-
-## Raspberry Pi 4 Technical Specifications Overview
-Raspberry Pi 4 model B specifications:
-- Quad-core Broadcom BCM2711 Cortex-A72 1.ARM - v8) 64-bit SoC @ 1.5 - 
-- VideoCore VI GPU @ 500 MHz 
-- 1 GB, 2 GB, 4 GB or 8 GB LPDDR4-3200 1.DRAM
-- Dual band Wi-Fi 2.4/5.0 GHz IEEE 802.1.1ac, - Bluetooth 5.0, - etooth LE
-- Gigabit Ethernet port
-- H.265 (HEVC) – 4kp60 decode, H.264 – - 1.080p60 decode, 1080p30 - ode
-- OpenGL ES 3.0 support
-- 2 x micro-HDMI ports (up to 4K60p output)
-- 4 x USB ports: 2 x USB 3.0 and 2 x USB 2.1.
--  Raspberry Pi standard 40-pin GPIO header 1. (fully backward - patible)
--  2-lane MIPI DSI display port
--  2-lane MIPI CSI camera port
--  4-pole 3.5 mm jack for stereo audio and 1. composite video
--  Micro-SD card slot
--  4-pin Power over Ethernet (PoE) header
--  5V DC/3A over USB-C power connector
-
-
-
-## Raspberry Pi 5 Technical Specifications Overview
-- Broadcom BCM2712 2.4GHz quad-core 64-bit Arm Cortex-A76 CPU, with - cryptography extensions, 512KB per-core L2 caches and a 2MB shared L3 - cache
-- VideoCore VII GPU, supporting OpenGL ES 3.1, Vulkan 1.2
-- Dual 4Kp60 HDMI® display output with HDR support
-- 4Kp60 HEVC decoder
-- LPDDR4X-4267 SDRAM (4GB and 8GB SKUs available at launch)
-- Dual-band 802.11ac Wi-Fi®
-- Bluetooth 5.0 / Bluetooth Low Energy (BLE)
-- microSD card slot, with support for high-speed SDR104 mode
-- 2 × USB 3.0 ports, supporting simultaneous 5Gbps operation
-- 2 × USB 2.0 ports
-- Gigabit Ethernet, with PoE+ support (requires separate PoE+ HAT)
-- 2 × 4-lane MIPI camera/display transceivers
-- PCIe 2.0 x1 interface for fast peripherals (requires separate M.2 HAT - or other adapter)
-- 5V/5A DC power via USB-C, with Power Delivery support
-- Raspberry Pi standard 40-pin header
-- Real-time clock (RTC), powered from external battery
-- Power button
