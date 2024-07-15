@@ -148,7 +148,7 @@ Detailed benchmark results for Raspberry Pi 4 and Raspberry Pi 5 can be found in
 
 For more information, refer to the [Raspberry Pi Benchmark Results](./results/README.md).
 
-[1]: https://www.raspberrypi.com/documentation/services/connect.html
+https://www.raspberrypi.com/documentation/services/connect.html
 
 
 This README provides a comprehensive guide to getting started with benchmarking on Raspberry Pi, including configuration steps for Raspberry Pi Connect and detailed benchmark instructions and results.
