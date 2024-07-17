@@ -151,5 +151,3 @@ For more information, refer to the [Raspberry Pi Benchmark Results](./results/RE
 https://www.raspberrypi.com/documentation/services/connect.html
 
 
-This README provides a comprehensive guide to getting started with benchmarking on Raspberry Pi, including configuration steps for Raspberry Pi Connect and detailed benchmark instructions and results.
-
