@@ -144,6 +144,9 @@ Navigate to the `benchmarks` folder for detailed instructions and scripts for ru
 
 Detailed benchmark results for Raspberry Pi 4 and Raspberry Pi 5 can be found in the `results` folder.Here, you will find the results of running the above benchmarks on both Raspberry Pi models and the corresponding performance metrics. 
 
+
+
+
  These results include comparisons across various benchmarks to highlight the performance improvements and differences between the two models.
 
 For more information, refer to the [Raspberry Pi Benchmark Results](./results/README.md).
