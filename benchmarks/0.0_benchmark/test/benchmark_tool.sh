@@ -8,8 +8,8 @@ case "$1" in
     duration=60
     ;;
   stress)
-    echo "Stress data for 60 seconds"
-    duration=60
+    echo "Stress data for 300 seconds"
+    duration=300
     ;;
   cooldown)
     echo "Cool down data for 60 seconds"

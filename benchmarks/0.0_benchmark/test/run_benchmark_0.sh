@@ -88,9 +88,9 @@ sysbench --test=memory run > sysbench_memory.txt
 log_message "Starting Storage I/O Test"
 ./benchmark_tool.sh storage
 
-# 6. Stress Test (60 seconds)
+# 6. Stress Test (300 seconds)
 log_message "Starting Stress Test"
-stress-ng --cpu 4 --cpu-method matrixprod --timeout 60s > stress_ng_output.txt &
+stress-ng --cpu 4 --cpu-method matrixprod --timeout 300s > stress_ng_output.txt &
 ./benchmark_tool.sh stress
 
 # 7. Cool Down Period (60 seconds)
