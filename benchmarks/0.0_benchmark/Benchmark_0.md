@@ -132,9 +132,7 @@ We will use a combination of industry-standard benchmarking tools to assess vari
    - Purpose: To monitor CPU temperature and clock speed during tests
    - Metrics: CPU temperature (°C), CPU clock speed (MHz), throttling status
 
-5. **iperf3**
-   - Purpose: To measure network performance
-   - Metrics: Network throughput, jitter, packet loss
+
 
 ## Benchmark Procedure
 
@@ -159,8 +157,7 @@ We will use a combination of industry-standard benchmarking tools to assess vari
 6. **Cool Down Period (60 seconds)**
    - Monitor temperature decrease and clock speed normalization
 
-7. **Network Performance Test**
-   - Run iperf3 to measure network throughput
+
 
 ## Data Collection and Analysis
 

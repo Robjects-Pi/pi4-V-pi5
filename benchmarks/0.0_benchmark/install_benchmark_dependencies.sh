@@ -79,3 +79,7 @@ chmod +x benchmark_tool.sh
 
 log_message "All dependencies have been installed successfully"
 log_message "Benchmark #0 is ready to run"
+
+
+# Install python analysis script dependencies
+pip3 install pandas matplotlib seaborn
