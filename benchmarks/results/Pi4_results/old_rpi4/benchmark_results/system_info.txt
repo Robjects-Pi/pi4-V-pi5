@@ -1,0 +1,126 @@
+Linux garage-maker 6.1.21-v8+ #1642 SMP PREEMPT Mon Apr  3 17:24:16 BST 2023 aarch64 GNU/Linux
+processor	: 0
+BogoMIPS	: 108.00
+Features	: fp asimd evtstrm crc32 cpuid
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0xd08
+CPU revision	: 3
+
+processor	: 1
+BogoMIPS	: 108.00
+Features	: fp asimd evtstrm crc32 cpuid
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0xd08
+CPU revision	: 3
+
+processor	: 2
+BogoMIPS	: 108.00
+Features	: fp asimd evtstrm crc32 cpuid
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0xd08
+CPU revision	: 3
+
+processor	: 3
+BogoMIPS	: 108.00
+Features	: fp asimd evtstrm crc32 cpuid
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x0
+CPU part	: 0xd08
+CPU revision	: 3
+
+Hardware	: BCM2835
+Revision	: d03114
+Serial		: 10000000ce21ecb1
+Model		: Raspberry Pi 4 Model B Rev 1.4
+MemTotal:        7770888 kB
+MemFree:         5816512 kB
+MemAvailable:    6662536 kB
+Buffers:           66404 kB
+Cached:           919396 kB
+SwapCached:            0 kB
+Active:          1440684 kB
+Inactive:         310508 kB
+Active(anon):     818208 kB
+Inactive(anon):    11156 kB
+Active(file):     622476 kB
+Inactive(file):   299352 kB
+Unevictable:       46932 kB
+Mlocked:              16 kB
+SwapTotal:        102396 kB
+SwapFree:         102396 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:               252 kB
+Writeback:             0 kB
+AnonPages:        812124 kB
+Mapped:           342196 kB
+Shmem:             63972 kB
+KReclaimable:      47672 kB
+Slab:              90828 kB
+SReclaimable:      47672 kB
+SUnreclaim:        43156 kB
+KernelStack:        6920 kB
+PageTables:        16492 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     3987840 kB
+Committed_AS:    3715164 kB
+VmallocTotal:   259653632 kB
+VmallocUsed:       15320 kB
+VmallocChunk:          0 kB
+Percpu:              704 kB
+CmaTotal:         524288 kB
+CmaFree:          509156 kB
+arm_64bit=1
+arm_boost=1
+arm_freq=1800
+audio_pwm_mode=514
+camera_auto_detect=1
+config_hdmi_boost=5
+core_freq=550
+core_freq_min=220
+disable_commandline_tags=2
+disable_l2cache=1
+disable_overscan=1
+display_auto_detect=1
+display_hdmi_rotate=-1
+display_lcd_rotate=-1
+dvfs=3
+enable_gic=1
+force_eeprom_read=1
+force_pwm_open=1
+framebuffer_ignore_alpha=1
+framebuffer_swap=1
+gpu_freq=500
+gpu_freq_min=250
+h264_freq=550
+hdmi_enable_4kp60=1
+hdmi_samples_limit=0x1f4000
+hevc_freq=550
+init_uart_clock=0x2dc6c00
+isp_freq=550
+lcd_framerate=60
+mask_gpu_interrupt0=3072
+mask_gpu_interrupt1=25763
+max_framebuffer_height=2160
+max_framebuffer_width=3840
+max_framebuffers=2
+over_voltage_avs=-10000
+pause_burst_frames=1
+program_serial_random=1
+total_mem=8192
+v3d_freq=550
+hdmi_force_cec_address:0=65535
+hdmi_force_cec_address:1=65535
+hdmi_force_hotplug:0=1
+hdmi_pixel_freq_limit:0=0x23c34600
+hdmi_pixel_freq_limit:1=0x9a7ec80
