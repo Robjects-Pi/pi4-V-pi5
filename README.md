@@ -105,21 +105,29 @@ To run the benchmark tests on your Raspberry Pi:
    cd pi4-V-pi5/benchmarks
    ```
 
-3. Run the benchmark script:
+3. Go to the benchmark directory you want to test:
    ```bash
-   ./run_benchmarks.sh
+   cd 1.0_Benchmark
    ```
-
-4. The results will be saved in the `results` directory, organized by your Raspberry Pi model.
-
-5. To compare your results with other models, use the comparison tool:
+4. Change the permissions of the benchmark install and run script to make it executable and
    ```bash
-   python3 compare_results.py
+   chmod +x install_benchmark_X_dependencies.sh run_benchmark_X.sh 
+   ``` 
+5. Run the benchmark install script:
+   ```bash
+   ./install_benchmark_X_dependencies.sh
+
    ```
+6. Run the benchmark script:
+   ```bash
+   ./run_benchmark_X.sh
+   ```
+7. The results will be saved in the `benchmark_results` directory, organized by your Raspberry Pi model. Look for a detailed summary of the benchmark outcomes in the `results` directory.
 
 > **Note:**
 > - The benchmarking process may take some time to complete, depending on the test scenarios and workloads.
-> - For more detailed instructions on running individual benchmarks, refer to the benchmark documentation in the `benchmarks` directory.
+> - Make sure the installation and benchmark scripts are executed with the appropriate permissions, and no errors occur during the process.
+> - For more detailed instructions on the benchmark tests, refer to the benchmark's `README.md` file in the respective benchmark directory.
 
 
 

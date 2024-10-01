@@ -115,4 +115,4 @@ vcgencmd measure_temp >> summary_report.txt
 log_message "Benchmark #0 Completed"
 
 log_message "Creating detailed analysis report"
-python3 analyze_benchmark.py
+python3 generate_summary.py sysbench_single_thread.txt sysbench_multi_thread.txt sysbench_memory.txt summary_report.txt
