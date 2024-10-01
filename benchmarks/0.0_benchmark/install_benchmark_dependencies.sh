@@ -25,11 +25,6 @@ sudo apt-get install -y stress-ng
 log_message "Installing iperf3"
 sudo apt-get install -y iperf3
 
-# Download and install PassMark PerformanceTest
-log_message "Downloading PassMark PerformanceTest"
-wget https://www.passmark.com/downloads/pt_linux_arm64.zip
-unzip pt_linux_arm64.zip
-chmod +x pt_linux_arm64
 
 # Install additional tools for system monitoring
 log_message "Installing additional system monitoring tools"
