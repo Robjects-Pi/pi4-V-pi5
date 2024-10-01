@@ -11,18 +11,4 @@ docs/raspberry-pi-4-reduced-schematics.pdf
 docs/raspberry-pi-5-mechanical-drawing.pdf
 docs/raspberry-pi-5-product-brief.pdf
 docs/Terms and conditions - Raspberry Pi.pdf
-benchmarks/0.0_benchmark/benchmark_0.0.csv
-benchmarks/0.0_benchmark/pt_linux_arm64.zip
-benchmarks/0.0_benchmark/PerformanceTest/pt_linux_arm64
-benchmarks/0.0_benchmark/benchmark_results/passmark_disk.txt
-benchmarks/0.0_benchmark/benchmark_results/passmark_memory.txt
-benchmarks/0.0_benchmark/benchmark_results/stress_ng_output.txt
-benchmarks/0.0_benchmark/benchmark_results/summary_report.txt
-benchmarks/0.0_benchmark/benchmark_results/sysbench_memory.txt
-benchmarks/0.0_benchmark/benchmark_results/sysbench_multi_thread.txt
-benchmarks/0.0_benchmark/benchmark_results/sysbench_single_thread.txt
-benchmarks/0.0_benchmark/benchmark_results/system_info.txt
-benchmarks/0.0_benchmark/benchmark_results/benchmark_log.txt
-benchmarks/0.0_benchmark/pt_linux_arm64.zip.1
-benchmarks/0.0_benchmark/benchmark_results/benchmark_tool.sh
-benchmarks/0.0_benchmark/benchmark_results/benchmark.csv
+benchmarks/0.0_benchmark/test/benchmark_results/*
