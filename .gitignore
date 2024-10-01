@@ -1,7 +1,6 @@
 .DS_Store
 .vscode/branch-timer.json
 .vscode/settings.json
-benchmarks/.DS_Store
 docs/.DS_Store
 docs/case-for-raspberry-pi-5-product-brief.pdf
 docs/raspberry-pi-4-datasheet.pdf
