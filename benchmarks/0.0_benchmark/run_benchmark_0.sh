@@ -84,6 +84,7 @@ sysbench --test=memory run > sysbench_memory.txt
 
 # 5. Storage I/O Test
 log_message "Starting Storage I/O Test"
+./benchmark_tool.sh storage
 
 # 6. Stress Test (300 seconds)
 log_message "Starting Stress Test"
