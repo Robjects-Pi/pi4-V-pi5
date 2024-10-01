@@ -1,4 +1,4 @@
-Certainly! I'll update the 0.0_Benchmark.md file to include installation instructions for the required tools. Here's the enhanced version of the benchmark file:
+
 
 # Benchmark #0: Comprehensive Performance Evaluation
 
@@ -31,6 +31,8 @@ Before running the benchmark, ensure that all necessary tools are installed. You
 
 If you prefer to install the tools manually, follow these steps:
 
+
+
 1. Update your system:
    ```bash
    sudo apt update && sudo apt upgrade -y
@@ -46,30 +48,18 @@ If you prefer to install the tools manually, follow these steps:
    sudo apt install stress-ng -y
    ```
 
-4. Install iperf3 for network testing:
-   ```bash
-   sudo apt install iperf3 -y
-   ```
-
-5. Download and install PassMark PerformanceTest:
-   ```bash
-   wget https://www.passmark.com/downloads/pt_linux_arm64.zip
-   unzip pt_linux_arm64.zip
-   chmod +x pt_linux_arm64
-   ```
-
-6. Install additional tools for system monitoring:
+4. Install additional tools for system monitoring:
    ```bash
    sudo apt install htop iotop -y
    ```
 
-7. Install Python and required libraries for data analysis:
+5. Install Python and required libraries for data analysis:
    ```bash
    sudo apt install python3 python3-pip -y
    pip3 install matplotlib pandas
    ```
 
-8. Create the benchmark_tool.sh script:
+6. Create the benchmark_tool.sh script:
    ```bash
    cat << 'EOF' > benchmark_tool.sh
    #!/bin/bash
@@ -111,90 +101,15 @@ If you prefer to install the tools manually, follow these steps:
 
    chmod +x benchmark_tool.sh
    ```
-
-By adding this note, users are made aware of the automatic install script option, which can save time and effort in setting up the benchmark environment.
-
-
-
-1. Update your system:
+7. Run the benchmark_tool.sh script with the desired argument:
    ```bash
-   sudo apt update && sudo apt upgrade -y
+   ./benchmark_tool.sh idle
    ```
-
-2. Install Sysbench:
    ```bash
-   sudo apt install sysbench -y
+   ./benchmark_tool.sh stress
    ```
-
-3. Install Stress-ng:
    ```bash
-   sudo apt install stress-ng -y
-   ```
-
-4. Install iperf3 for network testing:
-   ```bash
-   sudo apt install iperf3 -y
-   ```
-
-5. Download and install PassMark PerformanceTest:
-   ```bash
-   wget https://www.passmark.com/downloads/pt_linux_arm64.zip
-   unzip pt_linux_arm64.zip
-   chmod +x pt_linux_arm64
-   ```
-
-6. Install additional tools for system monitoring:
-   ```bash
-   sudo apt install htop iotop -y
-   ```
-
-7. Install Python and required libraries for data analysis:
-   ```bash
-   sudo apt install python3 python3-pip -y
-   pip3 install matplotlib pandas
-   ```
-
-8. Create the benchmark_tool.sh script:
-   ```bash
-   cat << 'EOF' > benchmark_tool.sh
-   #!/bin/bash
-
-   output_file="benchmark.csv"
-
-   case "$1" in
-     idle)
-       echo "Idle data for 60 seconds"
-       duration=60
-       ;;
-     stress)
-       echo "Stress data for 300 seconds"
-       duration=300
-       ;;
-     cooldown)
-       echo "Cool down data for 60 seconds"
-       duration=60
-       ;;
-     *)
-       echo "Usage: $0 {idle|stress|cooldown}"
-       exit 1
-       ;;
-   esac
-
-   echo "Timestamp,CPU Temperature (°C),CPU Clock Speed (MHz),CPU Throttled" > "$output_file"
-
-   for i in $(seq 1 $duration); do
-     timestamp=$(date +"%Y-%m-%d %H:%M:%S")
-     cpu_temp=$(vcgencmd measure_temp | cut -d= -f2 | cut -d\' -f1)
-     cpu_clock_speed=$(($(vcgencmd measure_clock arm | awk -F= '{print $2}') / 1000000))
-     throttled_status=$(vcgencmd get_throttled)
-     echo "$timestamp,$cpu_temp,$cpu_clock_speed,$throttled_status" >> "$output_file"
-     sleep 1
-   done
-
-   echo "Data collection complete. Results saved in $output_file"
-   EOF
-
-   chmod +x benchmark_tool.sh
+   ./benchmark_tool.sh cooldown
    ```
 
 ## Benchmarking Tools and Metrics
