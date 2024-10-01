@@ -1,0 +1,13 @@
+[2024-10-01 08:18:34] Collecting System Information
+[2024-10-01 08:18:34] Starting Idle State Measurement
+[2024-10-01 08:19:35] Starting CPU Performance Tests
+[2024-10-01 08:19:35] Running Sysbench Single-threaded CPU Test
+[2024-10-01 08:19:45] Running Sysbench Multi-threaded CPU Test
+[2024-10-01 08:19:55] Starting Memory Performance Tests
+[2024-10-01 08:19:55] Running Sysbench Memory Test
+[2024-10-01 08:20:05] Starting Storage I/O Test
+[2024-10-01 08:20:05] Starting Stress Test
+[2024-10-01 08:25:20] Starting Cool Down Period
+[2024-10-01 08:26:21] Generating Summary Report
+[2024-10-01 08:26:21] Benchmark #0 Completed
+[2024-10-01 08:26:21] Creating detailed analysis report

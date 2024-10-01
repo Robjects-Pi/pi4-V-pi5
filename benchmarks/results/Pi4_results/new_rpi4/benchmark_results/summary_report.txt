@@ -1,0 +1,12 @@
+Benchmark #0 Summary
+=====================
+
+CPU Performance:
+    total time:                          10.0014s
+    total time:                          10.0013s
+
+Memory Performance:
+23583.17 MiB transferred (2357.48 MiB/sec)
+
+Maximum Temperature:
+temp=50.6'C
