@@ -113,3 +113,6 @@ echo "Maximum Temperature:" >> summary_report.txt
 vcgencmd measure_temp >> summary_report.txt
 
 log_message "Benchmark #0 Completed"
+
+log_message "Creating detailed analysis report"
+python3 analyze_benchmark.py
