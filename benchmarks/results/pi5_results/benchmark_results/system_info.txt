@@ -1,0 +1,131 @@
+Linux pi5-bench 6.6.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.6.47-1+rpt1 (2024-09-02) aarch64 GNU/Linux
+processor	: 0
+BogoMIPS	: 108.00
+Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x4
+CPU part	: 0xd0b
+CPU revision	: 1
+
+processor	: 1
+BogoMIPS	: 108.00
+Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x4
+CPU part	: 0xd0b
+CPU revision	: 1
+
+processor	: 2
+BogoMIPS	: 108.00
+Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x4
+CPU part	: 0xd0b
+CPU revision	: 1
+
+processor	: 3
+BogoMIPS	: 108.00
+Features	: fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics fphp asimdhp cpuid asimdrdm lrcpc dcpop asimddp
+CPU implementer	: 0x41
+CPU architecture: 8
+CPU variant	: 0x4
+CPU part	: 0xd0b
+CPU revision	: 1
+
+Revision	: d04170
+Serial		: 6b9866938f934ed1
+Model		: Raspberry Pi 5 Model B Rev 1.0
+MemTotal:        8241488 kB
+MemFree:         3057568 kB
+MemAvailable:    6301296 kB
+Buffers:          124560 kB
+Cached:          3299248 kB
+SwapCached:            0 kB
+Active:          2496176 kB
+Inactive:        2204448 kB
+Active(anon):    1518032 kB
+Inactive(anon):        0 kB
+Active(file):     978144 kB
+Inactive(file):  2204448 kB
+Unevictable:      141488 kB
+Mlocked:              16 kB
+SwapTotal:        204784 kB
+SwapFree:         204784 kB
+Zswap:                 0 kB
+Zswapped:              0 kB
+Dirty:            130992 kB
+Writeback:            48 kB
+AnonPages:       1418544 kB
+Mapped:           672832 kB
+Shmem:            241216 kB
+KReclaimable:     160336 kB
+Slab:             215520 kB
+SReclaimable:     160336 kB
+SUnreclaim:        55184 kB
+KernelStack:       10432 kB
+PageTables:        24768 kB
+SecPageTables:         0 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     4325520 kB
+Committed_AS:    7116768 kB
+VmallocTotal:   68180246528 kB
+VmallocUsed:       27008 kB
+VmallocChunk:          0 kB
+Percpu:             1280 kB
+CmaTotal:         327680 kB
+CmaFree:          311200 kB
+arm_64bit=1
+arm_boost=1
+arm_freq=2400
+arm_freq_min=1500
+arm_peri_high=1
+audio_pwm_mode=2
+auto_initramfs=1
+avs_temp=51569
+camera_auto_detect=1
+core_freq=910
+core_freq_min=500
+disable_commandline_tags=2
+disable_fw_kms_setup=1
+disable_l2cache=1
+disable_overscan=1
+display_auto_detect=1
+display_default_lcd=-1
+display_hdmi_rotate=-1
+display_lcd_rotate=-1
+dvfs=4
+enable_gic=1
+enable_uart=-1
+force_eeprom_read=1
+force_pwm_open=1
+framebuffer_depth=16
+framebuffer_ignore_alpha=1
+framebuffer_swap=1
+gpu_freq_min=500
+hdmi_enable_4kp60=1
+hevc_freq=910
+hevc_freq_min=500
+ignore_lcd=-1
+init_uart_clock=0x2dc6c00
+isp_freq=910
+isp_freq_min=500
+mask_gpu_interrupt1=16418
+max_framebuffers=2
+over_voltage_avs=0x29234
+pause_burst_frames=1
+pciex4_reset=1
+pmic_turbo_threshold=600
+program_serial_random=1
+total_mem=8192
+usb_max_current_enable=1
+v3d_freq=960
+v3d_freq_min=500
+vpred=9285
+vpred_max=9285
+hdmi_force_cec_address:0=65535
+hdmi_force_cec_address:1=65535
