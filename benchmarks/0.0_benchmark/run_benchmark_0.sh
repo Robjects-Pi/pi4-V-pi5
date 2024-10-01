@@ -112,6 +112,6 @@ echo "Network Performance:" >> summary_report.txt
 grep "sender" network_test.txt >> summary_report.txt
 echo "" >> summary_report.txt
 echo "Maximum Temperature:" >> summary_report.txt
-sort -n -k2 -t, benchmark.csv | tail -n 1 >> summary_report.txt
+sort -n -k2 -t, benchmark_0.csv | tail -n 1 >> summary_report.txt
 
 log_message "Benchmark #0 Completed"
