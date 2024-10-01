@@ -44,6 +44,10 @@ fi
 mkdir -p benchmark_results
 cd benchmark_results
 
+# Copy the benchmark tool script
+cp ../benchmark_tool.sh .
+
+
 # Function to log messages with timestamps
 log_message() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a benchmark_log.txt
@@ -90,10 +94,6 @@ stress-ng --cpu 4 --cpu-method matrixprod --timeout 300s > stress_ng_output.txt 
 log_message "Starting Cool Down Period"
 ./benchmark_tool.sh cooldown
 
-# 8. Network Performance Test
-log_message "Starting Network Performance Test"
-iperf3 -c iperf.he.net -t 30 > network_test.txt
-
 # Generate summary report
 log_message "Generating Summary Report"
 echo "Benchmark #0 Summary" > summary_report.txt
@@ -106,12 +106,7 @@ echo "" >> summary_report.txt
 echo "Memory Performance:" >> summary_report.txt
 grep "transferred" sysbench_memory.txt >> summary_report.txt
 echo "" >> summary_report.txt
-echo "Disk Performance:" >> summary_report.txt
-echo "" >> summary_report.txt
-echo "Network Performance:" >> summary_report.txt
-grep "sender" network_test.txt >> summary_report.txt
-echo "" >> summary_report.txt
 echo "Maximum Temperature:" >> summary_report.txt
-sort -n -k2 -t, benchmark_0.csv | tail -n 1 >> summary_report.txt
+vcgencmd measure_temp >> summary_report.txt
 
 log_message "Benchmark #0 Completed"
