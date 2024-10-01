@@ -22,3 +22,4 @@ benchmarks/0.0_benchmark/benchmark_results/sysbench_memory.txt
 benchmarks/0.0_benchmark/benchmark_results/sysbench_multi_thread.txt
 benchmarks/0.0_benchmark/benchmark_results/sysbench_single_thread.txt
 benchmarks/0.0_benchmark/benchmark_results/system_info.txt
+benchmarks/0.0_benchmark/benchmark_results/benchmark_log.txt
