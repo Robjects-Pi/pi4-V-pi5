@@ -12,3 +12,5 @@ docs/raspberry-pi-5-mechanical-drawing.pdf
 docs/raspberry-pi-5-product-brief.pdf
 docs/Terms and conditions - Raspberry Pi.pdf
 benchmarks/0.0_benchmark/benchmark_0.0.csv
+benchmarks/0.0_benchmark/pt_linux_arm64.zip
+benchmarks/0.0_benchmark/PerformanceTest/pt_linux_arm64
