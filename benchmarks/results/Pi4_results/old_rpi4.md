@@ -1,0 +1,1 @@
+Here is the detailed report on the benchmarking results of Raspberry Pi 4, old and updated to the latest version of Raspberry Pi OS (64-bit), with all updates installed and Bullseye as the base OS.
