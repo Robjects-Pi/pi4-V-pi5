@@ -27,10 +27,6 @@ if ! command -v sysbench &> /dev/null; then
     exit 1
 fi
 
-if [ ! -f "pt_linux_arm64" ]; then
-    echo "PassMark PerformanceTest is not installed. Please run install_benchmark_dependencies.sh first."
-    exit 1
-fi
 
 if ! command -v stress-ng &> /dev/null; then
     echo "stress-ng is not installed. Please run install_benchmark_dependencies.sh first."
