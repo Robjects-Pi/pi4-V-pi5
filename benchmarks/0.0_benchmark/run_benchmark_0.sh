@@ -18,7 +18,31 @@ It includes the following tests:
 
 # Benchmark #0: Comprehensive Performance Evaluation of Raspberry Pi
 
+# Print the start message
 echo "Starting Benchmark #0: Comprehensive Performance Evaluation"
+
+# Check dependencies
+if ! command -v sysbench &> /dev/null; then
+    echo "sysbench is not installed. Please run install_benchmark_dependencies.sh first."
+    exit 1
+fi
+
+if [ ! -f "pt_linux_arm64" ]; then
+    echo "PassMark PerformanceTest is not installed. Please run install_benchmark_dependencies.sh first."
+    exit 1
+fi
+
+if ! command -v stress-ng &> /dev/null; then
+    echo "stress-ng is not installed. Please run install_benchmark_dependencies.sh first."
+    exit 1
+fi
+
+if ! command -v iperf3 &> /dev/null; then
+    echo "iperf3 is not installed. Please run install_benchmark_dependencies.sh first."
+    exit 1
+fi
+
+
 
 # Create output directory
 mkdir -p benchmark_results

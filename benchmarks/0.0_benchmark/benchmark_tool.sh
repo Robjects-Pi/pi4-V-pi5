@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Tom's Hardware Benchmark Tool"
-output_file="benchmark.csv"
+output_file="benchmark_0.csv"
 
 
 echo "Timestamp,CPU Temperature (°C),CPU Clock Speed (MHz),CPU Throttled" > "$output_file"
