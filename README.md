@@ -1,5 +1,6 @@
-
 # Raspberry Pi Benchmarking Suite
+
+This repository contains tools and instructions for benchmarking the performance of your Raspberry Pi. Whether you are using a Raspberry Pi 4 or the latest Raspberry Pi 5, this guide will help you get started with configuring your device and running comprehensive benchmark tests.
 
 ## Introduction
 
@@ -8,18 +9,35 @@ Welcome to the Raspberry Pi Benchmarking Suite! This repository contains tools a
 ## Table of Contents
 
 - [Raspberry Pi Benchmarking Suite](#raspberry-pi-benchmarking-suite)
-  - [Introduction](#introduction)
-  - [Table of Contents](#table-of-contents)
-  - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Configuring Raspberry Pi Connect](#configuring-raspberry-pi-connect)
-  - [Benchmark Tests](#benchmark-tests)
-    - [CPU Benchmarks](#cpu-benchmarks)
-    - [Memory Benchmarks](#memory-benchmarks)
-    - [Storage Benchmarks](#storage-benchmarks)
-    - [Network Benchmarks](#network-benchmarks)
-    - [GPU Benchmarks](#gpu-benchmarks)
-  - [Benchmark Results](#benchmark-results)
+- [Introduction](#introduction)
+- [Table of Contents](#table-of-contents)
+- [Repository Organization](#repository-organization)
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Configuring Raspberry Pi Connect](#configuring-raspberry-pi-connect)
+- [Running Benchmark Tests](#running-benchmark-tests)
+
+## Repository Organization
+
+The repository is organized into two main directories:
+
+### benchmarks
+
+This directory contains the benchmark scripts and tools used to test various aspects of Raspberry Pi performance. The benchmarks include:
+
+- **CPU Performance**: Tests for single-core and multi-core performance
+- **Memory Speed**: Evaluates RAM read/write speeds
+- **Storage I/O**: Measures disk read/write performance
+- **Network Speed**: Tests network throughput and latency
+- **GPU Performance**: Assesses graphics processing capabilities
+
+### results
+
+This directory stores the benchmark results for different Raspberry Pi models. It includes:
+
+- **Pi4_results**: Benchmark outcomes for Raspberry Pi 4 models
+- **Pi5_results**: Benchmark outcomes for Raspberry Pi 5 models
+- **Comparison**: Comparative analysis between Pi 4 and Pi 5 performance
 
 ## Getting Started
 
@@ -30,127 +48,78 @@ Before you begin, ensure you have the following:
 - A Raspberry Pi 4 or Raspberry Pi 5
 - A 64-bit distribution of Raspberry Pi OS Bookworm
 - An active internet connection
-- SSH enabled on your Raspberry Pi
 
 ### Configuring Raspberry Pi Connect
 
 Raspberry Pi Connect provides secure access to your Raspberry Pi from anywhere in the world. Follow these steps to configure it:
 
 1. **Update Your System**
----
+
 ```bash
-   sudo apt update && sudo apt upgrade -y
+sudo apt update && sudo apt full-upgrade -y
 ```
----
 
 2. **Install Raspberry Pi Connect**
----
+
 ```bash
-   sudo apt install rpi-connect
+sudo apt install rpi-connect
 ```
----
 
 3. **Reboot Your Raspberry Pi**
----
+
 ```bash
-   sudo reboot
+sudo reboot
 ```
----
 
 4. **Link Your Raspberry Pi to Your Raspberry Pi ID**
 
-   - **Via the Raspberry Pi Desktop**:
-     - Click on the Connect icon in the system tray and choose "Sign in".
-     - Follow the instructions to generate a verification URL and link your device.
+- **Via the Raspberry Pi Desktop**:
+  - Click on the Connect icon in the system tray and choose "Sign in".
+  - Follow the instructions to generate a verification URL and link your device.
 
-   - **Via the Command Line**:
----    
-```bash
-     rpi-connect signin
+- **Via the Command Line**:
+  - Run the following command:
+    ```bash
+    rpi-connect signin
     ```
----
-     - Visit the generated URL to complete the linking process.
+  - Visit the generated URL to complete the linking process.
 
 5. **Verify Connection**
    - Once linked, the Connect system tray icon will turn blue.
    - You should receive an email notification indicating that a new device has signed into Connect.
+   - For more information, refer to the Raspberry Pi Connect documentation.
 
-For more detailed instructions, refer to the [Raspberry Pi Connect Documentation](https://www.raspberrypi.com/documentation/services/connect.html)[1].
+> **Note:** Content in section 'Configuring Raspberry Pi Connect' above adapted from Raspberry Pi Connect documentation created by Raspberry Pi Ltd and licensed under a [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-## Benchmark Tests
+## Running Benchmark Tests
 
-Navigate to the `benchmarks` folder for detailed instructions and scripts for running the following benchmarks:
+To run the benchmark tests on your Raspberry Pi:
 
-### CPU Benchmarks
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Robjects-Pi/pi4-V-pi5.git
+   ```
 
-- **Sysbench**: Measures CPU performance using prime number calculations.
----
-```bash
-  sysbench --test=cpu --cpu-max-prime=20000 run
-```
----
+2. Navigate to the benchmarks directory:
+   ```bash
+   cd pi4-V-pi5/benchmarks
+   ```
 
-- **Stress-ng**: Stress tests the CPU with various methods.
----
-```bash
-  stress-ng --cpu 4 --cpu-method matrixprod --timeout 300s
-```
----
+3. Run the benchmark script:
+   ```bash
+   ./run_benchmarks.sh
+   ```
 
-### Memory Benchmarks
+4. The results will be saved in the `results` directory, organized by your Raspberry Pi model.
 
-- **RAMspeed**: Measures cache and memory performance.
----
-```bash
-  ramspeed -b 1M -m 1G
-```
----
+5. To compare your results with other models, use the comparison tool:
+   ```bash
+   python3 compare_results.py
+   ```
 
-### Storage Benchmarks
+> **Note:**
+> - The benchmarking process may take some time to complete, depending on the test scenarios and workloads.
+> - For more detailed instructions on running individual benchmarks, refer to the benchmark documentation in the `benchmarks` directory.
 
-- **HDParm**: Tests read speed of storage devices.
----
-```bash
-  sudo hdparm -Tt /dev/mmcblk0
-```
----
-
-- **Iozone**: Tests file system performance.
----
-```bash
-  sudo iozone -a -g 512M
-```
----
-
-### Network Benchmarks
-
-- **Speedtest CLI**: Measures internet speed.
----
-```bash
-  speedtest-cli
-```
----
-
-### GPU Benchmarks
-
-- **glmark2**: Tests GPU performance.
----
-```bash
-  glmark2
-```
----
-
-## Benchmark Results
-
-Detailed benchmark results for Raspberry Pi 4 and Raspberry Pi 5 can be found in the `results` folder.Here, you will find the results of running the above benchmarks on both Raspberry Pi models and the corresponding performance metrics. 
-
-
-
-
- These results include comparisons across various benchmarks to highlight the performance improvements and differences between the two models.
-
-For more information, refer to the [Raspberry Pi Benchmark Results](./results/README.md).
-
-https://www.raspberrypi.com/documentation/services/connect.html
 
 
