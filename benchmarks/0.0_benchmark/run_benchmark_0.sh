@@ -71,10 +71,6 @@ sysbench --test=cpu --cpu-max-prime=20000 run > sysbench_single_thread.txt
 log_message "Running Sysbench Multi-threaded CPU Test"
 sysbench --test=cpu --cpu-max-prime=20000 --num-threads=4 run > sysbench_multi_thread.txt
 
-# PassMark CPU Test
-log_message "Running PassMark CPU Test"
-./pt_linux_arm64 -c > passmark_cpu.txt
-
 # 4. Memory Performance Test
 log_message "Starting Memory Performance Tests"
 
@@ -82,13 +78,8 @@ log_message "Starting Memory Performance Tests"
 log_message "Running Sysbench Memory Test"
 sysbench --test=memory run > sysbench_memory.txt
 
-# PassMark Memory Test
-log_message "Running PassMark Memory Test"
-./pt_linux_arm64 -m > passmark_memory.txt
-
 # 5. Storage I/O Test
 log_message "Starting Storage I/O Test"
-./pt_linux_arm64 -d > passmark_disk.txt
 
 # 6. Stress Test (300 seconds)
 log_message "Starting Stress Test"
@@ -111,14 +102,11 @@ echo "" >> summary_report.txt
 echo "CPU Performance:" >> summary_report.txt
 grep "total time:" sysbench_single_thread.txt >> summary_report.txt
 grep "total time:" sysbench_multi_thread.txt >> summary_report.txt
-grep "CPU Mark" passmark_cpu.txt >> summary_report.txt
 echo "" >> summary_report.txt
 echo "Memory Performance:" >> summary_report.txt
 grep "transferred" sysbench_memory.txt >> summary_report.txt
-grep "Memory Mark" passmark_memory.txt >> summary_report.txt
 echo "" >> summary_report.txt
 echo "Disk Performance:" >> summary_report.txt
-grep "Disk Mark" passmark_disk.txt >> summary_report.txt
 echo "" >> summary_report.txt
 echo "Network Performance:" >> summary_report.txt
 grep "sender" network_test.txt >> summary_report.txt
